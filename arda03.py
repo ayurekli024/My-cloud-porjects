@@ -1,0 +1,8 @@
+name = input("Who are you?: ")
+name = name.rstrip()
+name = name.lstrip()
+surname = name.rfind(" ")
+print("Formatlı İsim:", end= ":")
+print(name.upper()[surname+1:],name.capitalize()[:surname])
+trustName = len(name)- name.count(" ")
+print("Toplam Karakter Sayısı (Boşluksuz):", trustName)
