@@ -15,9 +15,9 @@ while True:
     str1 = input("Enter score: (for exit write exit or -1)")
     if str1 == 'exit' or str1 == '-1':
         break
-    elif not str1.isdigit() or str1.startswith("-"):
+    elif not str1.isdigit() or str1.startswith("-") or len(str1) > 2:
         print("Invalid score! You can input only numbers")
-        break
+        continue
     else: 
         list1.append(int(str1))
 print(len(list1))
