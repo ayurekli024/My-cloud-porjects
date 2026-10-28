@@ -46,7 +46,7 @@ list1[0] = int(input("Enter first score: "))
 list1[1] = int(input("Enter first score: "))
 list1[2] = int(input("Enter first score: "))
 list1.remove(min(list1))
-print(sum(list1)/2)"""
+print(sum(list1)/2)
 
 vowels = ('a','e','i','o','u')
 word = input("Enter word to translate: ")
@@ -97,4 +97,47 @@ else:
 
 letter = input("Enter a single uppercase letter: ")
 if not len(letter) == 1 or not letter.isupper():
-    print("You did not comply with the request.")
+    print("You did not comply with the request.")"""
+
+year = int(input("Enter a year: "))
+leap = False
+if year % 4 == 0:
+    leap = True
+    if year % 100 == 0:
+        leap = False
+        if year % 400 == 0:
+            leap = True
+
+if leap == True:
+    print(year, "is a leap year.")
+else:
+    print(year, "is not a leap year.")
+
+
+time = input("Enter a military time: ")
+hour = int(time[:2])
+minute = int(time[2:])
+pm = False
+if hour > 12:
+    hour = hour- 12
+    pm = True
+if pm == True:
+    print(hour,minute,"pm.")
+else:
+    print(hour,minute,"am.")
+
+taxableIncome = int(input("Enter your wave: "))
+if taxableIncome <= 20000:
+    tax = .02*taxableIncome
+elif taxableIncome <= 50000:
+    tax = 400 + .025 * (taxableIncome-20000)
+else:
+    tax = 1150+ .035 * (taxableIncome-50000)
+print(tax)
+
+cloth1 = eval(input("Enter cost of first suit: "))
+cloth2 = eval(input("Enter cost of second suit: "))
+if cloth1 < cloth2:
+    print((cloth1/2)+cloth2)
+else:
+    print(cloth1+(cloth2/2))
