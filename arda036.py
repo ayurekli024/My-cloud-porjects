@@ -22,7 +22,61 @@ for ch in phrase:
             vowel +=1
 print(vowel)
 
-num1 = int(input("Enter a Number: "))
-num2 = int(input("Enter a Number: "))
-num3 = int(input("Enter a Number: "))
-maxNum = 0
+x = 1
+sum = 0.0
+for x in range(1,101):
+    sum = float(sum + 1/x)
+
+print("{0:.5f}".format(sum))
+word = input("Bir kelime girin: ").strip().lower()
+is_alphabetical = True
+
+for i in range(len(word) - 1):
+    if word[i] > word[i + 1]:
+        is_alphabetical = False
+        break
+
+if is_alphabetical:
+    print(f"'{word}' harfleri alfabetik sırada.")
+else:
+    print(f"'{word}' harfleri alfabetik sırada DEĞİL.")
+
+vowels = ('a','e','i','o','u')
+word = input("Enter a word: ")
+list1 = []
+for i in range(len(word)):
+    for vow in vowels:
+        if word[i] == vow:
+            list1.append(word[i])
+print(list1)
+if len(list1) == 5:
+    print("yes")
+else:
+    print("no")
+
+
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+salary = float(input("Enter starting salary: "))
+
+total_earnings = 0
+current_salary = salary
+
+for current_age in range(age, 66):
+    total_earnings += current_salary
+    current_salary *= 1.05  # Apply 5% raise for the following year
+
+print(f"\n{name}'s total estimated earnings before retirement: ${total_earnings:,.2f}")
+
+cash = 1000
+investment = 1000
+print("{0:<30}{1:>30}".format("Simple Interest","Compound Interest"))
+for year in range(4):
+    investment *= 1.05
+    cash += 50
+    print(year,"{0:<.2f}{1:>30}".format(investment,cash))
+
+car = 20000
+for year in range(4):
+    car *=.85
+    print(car)
