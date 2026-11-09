@@ -62,5 +62,25 @@ list1 = sorted(NE, key=lambda x: x[2]/x[1])
 for i in range(len(list1)):
     print(list1[i][0])
 
-numbers = [865, 1169, 1208, 1243,329]
+numbers = [865, 1169, 1208, 1243,290]
+list1 = sorted(numbers, key=lambda n: sum(int(d) for d in str(n) if n%2 == 1))
+print(list1)
+def primeFactor(num):
+    i = 2
+    list0 =[]
+    while num != 1:
+        if num % i == False:
+            num = num //i
+            list0.append(i)
+        else:
+            i+=1
+    return max(list0)
+list2 = sorted(numbers, key=primeFactor, reverse = False)
+print(list2)
+list3 = sorted(numbers, key=lambda n: str(n)[-1],reverse =True)
+print(list3)    
+
+infile = open("USPres.txt",'r')
+list1 = [ch.rsplit("\n") for ch in infile ]
+print(list1)
 
